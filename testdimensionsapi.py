@@ -55,6 +55,7 @@ def get_figshare_metrics(host_site, article_id, max_retries=3):
 
 
 df = pd.read_csv("Updated_Dimensions_Dataset.csv")
+df["Publication date"] = pd.to_datetime(df["Publication date"], errors='coerce').dt.strftime("%Y-%m-%d")
 
 df_figshare = df[df["Source linkout"].str.contains("figshare", na=False)].copy()
 
