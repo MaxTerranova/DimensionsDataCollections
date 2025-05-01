@@ -90,7 +90,8 @@ for index, row in df_figshare.iterrows():
     })
     
     time.sleep(2)  # Respect rate limits
-
+    
+df["Publication date"] = pd.to_datetime(df["Publication date"], errors='coerce').dt.strftime("%Y-%m-%d")
 df.to_csv("Updated_Dimensions_Dataset.csv", index=False)
 print("Updated 'Updated_Dimensions_Dataset.csv' with Figshare metrics!")
 
