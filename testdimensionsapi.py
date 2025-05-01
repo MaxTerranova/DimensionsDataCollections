@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 import json
-import timez
+import time
 import re
 from urllib.parse import urlparse
 
